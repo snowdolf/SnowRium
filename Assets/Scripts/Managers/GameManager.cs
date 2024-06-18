@@ -11,6 +11,12 @@ public class GameManager : Singleton<GameManager>
     private float totalTime = 0f;
 
     public Action updateMoneyText;
+    public ParticleSystem EffectParticle;
+
+    private void Start()
+    {
+        EffectParticle = GameObject.FindGameObjectWithTag("Particle").GetComponent<ParticleSystem>();
+    }
 
     private void Update()
     {
