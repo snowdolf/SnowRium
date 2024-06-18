@@ -5,10 +5,12 @@ using UnityEngine.EventSystems;
 public class BackGround : MonoBehaviour, IPointerClickHandler
 {
     public TextMeshProUGUI moneyText;
+    public AudioClip clickClip;
 
     private void Start()
     {
         GameManager.Instance.updateMoneyText += UpdateMoneyText;
+        AudioManager.Instance.PlayBackgroundMusic();
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -16,6 +18,7 @@ public class BackGround : MonoBehaviour, IPointerClickHandler
         if(eventData.button == PointerEventData.InputButton.Left)
         {
             GameManager.Instance.ChangeMoney(GameManager.Instance.clickMoney);
+            AudioManager.Instance.PlaySound(clickClip);
         }
     }
 
