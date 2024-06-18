@@ -18,7 +18,7 @@ public class BackGround : MonoBehaviour, IPointerClickHandler
         if(eventData.button == PointerEventData.InputButton.Left)
         {
             GameManager.Instance.ChangeMoney(GameManager.Instance.clickMoney);
-            AudioManager.Instance.PlaySound(clickClip);
+            AudioManager.Instance.PlaySound(clickClip, 0.3f, 0.2f);
         }
     }
 

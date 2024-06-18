@@ -7,6 +7,8 @@ public class ItemSlot : MonoBehaviour
     public TextMeshProUGUI descText;
     public TextMeshProUGUI costText;
 
+    public AudioClip upgradeClip;
+
     public void Set()
     {
         string upgradeTypeStr = itemData.upgradeType switch
@@ -46,6 +48,7 @@ public class ItemSlot : MonoBehaviour
                     break;
             }
             GameManager.Instance.ChangeMoney(-itemData.cost);
+            AudioManager.Instance.PlaySound(upgradeClip, 0.3f, 0);
         }
     }
 }

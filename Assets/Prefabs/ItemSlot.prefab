@@ -493,6 +493,7 @@ MonoBehaviour:
   itemData: {fileID: 0}
   descText: {fileID: 7139814336918899591}
   costText: {fileID: 2369078967457414654}
+  upgradeClip: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
 --- !u!1 &5095194013749399718
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,9 +5,6 @@ public class AudioManager : Singleton<AudioManager>
     public AudioClip backgroundMusic;
     private AudioSource _audioSource;
 
-    private float soundEffectVolume = 0.3f;
-    private float soundEffectPitchVariance = 0.2f;
-
     void Start()
     {
         _audioSource = gameObject.AddComponent<AudioSource>();
@@ -27,7 +24,7 @@ public class AudioManager : Singleton<AudioManager>
         }
     }
 
-    public void PlaySound(AudioClip clip)
+    public void PlaySound(AudioClip clip, float soundEffectVolume, float soundEffectPitchVariance)
     {
         _audioSource.volume = soundEffectVolume;
         _audioSource.pitch = 1f + Random.Range(-soundEffectPitchVariance, soundEffectPitchVariance);
